@@ -1,0 +1,149 @@
+{
+  "id": "0f6f7795-977b-4d35-baa8-8b30f79bb32f",
+  "name": "Collection",
+  "requests": [
+    {
+      "id": "4c96975d-5055-4f56-be42-7f6b71eac0b0",
+      "collectionId": "0f6f7795-977b-4d35-baa8-8b30f79bb32f",
+      "method": "GET",
+      "url": "http://localhost/infinum/web/index.php/cities?orderBy=popularity",
+      "headers": "\n",
+      "dataMode": "urlencoded",
+      "data": [
+        {
+          "key": "email",
+          "value": "tkostantinov2@yahoo.com",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "password",
+          "value": "password",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "rawModeData": []
+    },
+    {
+      "id": "8344fff0-2487-4da7-9fd5-121854d11bdc",
+      "collectionId": "0f6f7795-977b-4d35-baa8-8b30f79bb32f",
+      "method": "POST",
+      "url": "http://localhost/infinum/web/index.php/user/register",
+      "headers": "\n",
+      "dataMode": "urlencoded",
+      "data": [
+        {
+          "key": "email",
+          "value": "tkostantinov@yahoo.com",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "password",
+          "value": "password",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "rawModeData": []
+    },
+    {
+      "id": "8ec20ca8-4032-4de1-bbad-c46972ec5d45",
+      "collectionId": "0f6f7795-977b-4d35-baa8-8b30f79bb32f",
+      "method": "POST",
+      "url": "http://localhost/infinum/web/index.php/user/login",
+      "headers": "\n",
+      "dataMode": "urlencoded",
+      "data": [
+        {
+          "key": "email",
+          "value": "tomislav.kostantinov@yahoo.com",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "password",
+          "value": "password",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "rawModeData": []
+    },
+    {
+      "id": "6ca72416-3de8-4c28-9a16-b339db314d63",
+      "collectionId": "0f6f7795-977b-4d35-baa8-8b30f79bb32f",
+      "method": "GET",
+      "url": "http://localhost/infinum/web/index.php/cities",
+      "headers": "\n",
+      "dataMode": "urlencoded",
+      "data": [
+        {
+          "key": "city_id",
+          "value": "2",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "rawModeData": []
+    },
+    {
+      "id": "bd8ee57f-33b6-4394-929f-6c41ac3501fa",
+      "collectionId": "0f6f7795-977b-4d35-baa8-8b30f79bb32f",
+      "method": "DELETE",
+      "url": "http://localhost/infinum/web/index.php/favorites/1?token=TOKEN",
+      "headers": "\n",
+      "dataMode": "urlencoded",
+      "data": [
+        {
+          "key": "city_id",
+          "value": "2",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "rawModeData": []
+    },
+    {
+      "id": "82e93dc5-7099-4cca-911e-ccc25e6592a1",
+      "collectionId": "0f6f7795-977b-4d35-baa8-8b30f79bb32f",
+      "method": "POST",
+      "url": "http://localhost/infinum/web/index.php/favorites?token=TOKEN",
+      "headers": "\n",
+      "dataMode": "urlencoded",
+      "data": [
+        {
+          "key": "city_id",
+          "value": "2",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "rawModeData": []
+    },
+    {
+      "id": "fae8d32b-692d-4fcc-add1-e6a3d6b7c27d",
+      "collectionId": "0f6f7795-977b-4d35-baa8-8b30f79bb32f",
+      "method": "POST",
+      "url": "http://localhost/infinum/web/index.php/cities?token=TOKEN",
+      "headers": "\n",
+      "dataMode": "urlencoded",
+      "data": [
+        {
+          "key": "name",
+          "value": "Split",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "description",
+          "value": "Drugi najveći grad",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "rawModeData": []
+    }
+  ]
+}

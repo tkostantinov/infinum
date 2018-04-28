@@ -35,7 +35,7 @@ class Router
      */
     public function addRoutes($routes)
     {
-        foreach($routes as $route)
+        foreach ($routes as $route)
             $this->addRoute(...$route);
     }
 
@@ -53,7 +53,7 @@ class Router
             $requestUri = substr($_SERVER['REQUEST_URI'], strlen($_SERVER['SCRIPT_NAME']));
         }
 
-        if(strpos($requestUri, '?') !== false)
+        if (strpos($requestUri, '?') !== false)
             $requestUri = substr($requestUri, 0, strpos($requestUri, '?'));
 
         $httpRequestMethod = $_SERVER['REQUEST_METHOD'];

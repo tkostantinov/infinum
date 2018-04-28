@@ -10,6 +10,7 @@ $diContainer = new Infinum\Framework\DependencyInjectionContainer();
 
 $diContainer->router = new Infinum\Framework\Router();
 $diContainer->geoLocation = new Infinum\Service\GeoLocation("AIzaSyDsMAGgfdkYsLCMLaPYpHSfs1JdQO_4AuA");
+$diContainer->tokenGenerator = new Infinum\Service\TokenGenerator();
 
 $db = new PDO('sqlite:../db/sqlite.db');
 
@@ -17,11 +18,12 @@ $diContainer->cityRepository = new Infinum\Repository\City($db);
 $diContainer->userRepository = new Infinum\Repository\User($db);
 
 $diContainer->router->addRoutes([
-    ['POST', '/login', 'Infinum\Controller\User::loginAction'],
+    ['POST', '/user/login', 'Infinum\Controller\User::loginAction'],
+    ['POST', '/user/register', 'Infinum\Controller\User::registerAction'],
     ['GET', '/cities', 'Infinum\Controller\Cities::getAction'],
     ['POST', '/cities', 'Infinum\Controller\Cities::postAction'],
     ['POST', '/favorites', 'Infinum\Controller\Favorites::postAction'],
-    ['DELETE', '/favories', 'Infinum\Controller\Favorites::deleteAction']
+    ['DELETE', '/favorites/:cityId', 'Infinum\Controller\Favorites::deleteAction']
 ]);
 
 try {

@@ -9,29 +9,28 @@ class User extends Controller
 
     public function loginAction()
     {
-        $credentials = json_decode(stream_get_contents(php::stdin));
+        $credentials = json_decode(file_get_contents('php://input'));
 
         try {
-            $user = $this->getDiContainer()->authorization->login($credentials->email, $credentials->password);
-        } catch(Exception $e)
-        {
+            $user = $this->getDiContainer()->userRepository->auth($credentials->email, $credentials->password);
+        } catch (Exception $e) {
             return json_encode("No such user");
         }
 
         header('Content-Type: application/json');
-        return json_encode($user);
+
+        echo json_encode($user);
     }
 
     public function registerAction()
     {
-        $user = json_decode(stream_get_contents(php::stdin));
-
-        die($user);
+        $user = json_decode(file_get_contents('php://input'));
 
         $token = $this->getDiContainer()->tokenGenerator->generate();
 
-        $user = $this->getDiContainer()->userRepository()->addUser($user->email, $user->password, $token);
+        $user = $this->getDiContainer()->userRepository->addUser($user->email, $user->password, $token);
+
         header('Content-Type: application/json');
-        return json_encode($user);
+        echo json_encode($user);
     }
 }

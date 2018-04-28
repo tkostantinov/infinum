@@ -8,7 +8,12 @@ class Cities extends Controller
 {
     public function getAction()
     {
-        $cities = $this->getDiContainer()->cityRepository->getCities();
+        if(isset($_GET['orderBy']) && $_GET['orderBy'] === "popularity")
+            $cities = $this->getDiContainer()->cityRepository->getCitiesByPopularity();
+        else {
+            $cities = $this->getDiContainer()->cityRepository->getCities();
+        }
+
 
         header('Content-Type: application/json');
         echo json_encode($cities);
@@ -31,9 +36,10 @@ class Cities extends Controller
         {
             header('Content-Type: application/json');
             echo json_encode("Invalid token");
+            exit;
         }
 
-        $city = json_decode(file_get_contents('php://input'), false);
+        $city = json_decode(file_get_contents('php://input'));
 
         $coordinates = $this->getDiContainer()->geoLocation->getCoordinates($city->name);
 

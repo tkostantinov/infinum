@@ -20,6 +20,19 @@ class City
         return $this->db->query($sql)->fetchAll(PDO::FETCH_OBJ);
     }
 
+    public function getCitiesByPopularity()
+    {
+        $sql = 'SELECT * FROM city c LEFT JOIN (
+                  SELECT COUNT(user_id) as popularity, city_id FROM user_favorite_city GROUP BY city_id
+                  ) as p
+                  ON c.id = p.city_id
+                ORDER BY
+                p.popularity
+              ';
+
+        return $this->db->query($sql)->fetchAll(PDO::FETCH_OBJ);
+    }
+
     public function addCity($userId, $name, $description, $lat, $lng)
     {
         $sql = "INSERT INTO city
