@@ -1,0 +1,12 @@
+{
+    "name": "infinum/demo",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Tomislav Kostantinov",
+            "email": "tomislav.kostantinov@yahoo.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
