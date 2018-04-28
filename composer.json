@@ -1,15 +1,20 @@
 {
-    "name": "infinum/demo",
-    "type": "project",
-    "authors": [
-        {
-            "name": "Tomislav Kostantinov",
-            "email": "tomislav.kostantinov@yahoo.com"
-        }
-    ],
-    "minimum-stability": "stable",
-    "require": {},
-    "require-dev": {
-        "phpunit/phpunit": "^5"
+  "name": "infinum/demo",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Tomislav Kostantinov",
+      "email": "tomislav.kostantinov@yahoo.com"
     }
+  ],
+  "minimum-stability": "stable",
+  "require": {},
+  "require-dev": {
+    "phpunit/phpunit": "^5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Infinum\\": "src/"
+    }
+  }
 }
